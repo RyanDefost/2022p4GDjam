@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Timers;
+using Timer = System.Timers.Timer;
 
 namespace GameJam.Game
 {
@@ -12,6 +14,7 @@ namespace GameJam.Game
         private readonly Image image;
         private readonly Font Font;
         private readonly Brush brush;
+        private float _countDown = 60f;
 
         public int GoldAmount = 0;
         private string GoldAmountText = "###";
@@ -43,12 +46,21 @@ namespace GameJam.Game
         {
             this.frametime = frametime;
 
+            _countDown -= frametime;
+
             Graphics g = InitGraphics(e);
             RenderRoom(g);
             RenderObject(g, context.player);
 
+            float aTimer = _countDown;
+            int Timer = (int)Math.Round(aTimer);
+
+            if (Timer <= 0) Application.Restart();
+
+
             GoldAmountText = GoldAmount.ToString();
             g.DrawString("Gold: " + GoldAmountText, Font, brush, 1,1);
+            g.DrawString(Timer.ToString(), Font, brush, 1, 10);
         }
 
         private void RenderRoom(Graphics g)
