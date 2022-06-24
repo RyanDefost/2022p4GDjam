@@ -16,8 +16,8 @@ namespace GameJam.Game
         private readonly Brush brush;
         private float _countDown = 15f;
 
-        public int GoldAmount = 0;
-        private string GoldAmountText = "###";
+        public int goldAmount = 0;
+        private string goldAmountText = "###";
 
         public GameRenderer(GameContext context)
         {
