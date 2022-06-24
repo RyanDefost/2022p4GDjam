@@ -110,7 +110,7 @@ namespace GameJam
                         Dictionary<char, Rectangle> map = gc.spriteMap.GetMap();
                         next.sprite = map['.'];
                         next.graphic = '.';
-                        renderer.GoldAmount += 10;
+                        renderer.goldAmount += 10;
                         return;
                     }
 
