@@ -14,7 +14,7 @@ namespace GameJam.Game
         private readonly Image image;
         private readonly Font Font;
         private readonly Brush brush;
-        private float _countDown = 60f;
+        private float _countDown = 15f;
 
         public int GoldAmount = 0;
         private string GoldAmountText = "###";
@@ -79,8 +79,8 @@ namespace GameJam.Game
             g.ScaleTransform(context.scaleunit, context.scaleunit);
 
             GoldAmountText = GoldAmount.ToString();
-            g.DrawString("Gold: " + GoldAmountText, Font, brush, 1,1);
-            g.DrawString(Timer.ToString(), Font, brush, 1, 10);
+            g.DrawString("Gold: " + GoldAmountText, Font, brush, 1,12);
+            g.DrawString("Collect as much gold as posible in " + Timer.ToString() + " seconds", Font, brush, 1, 1);
         }
 
         private void RenderRoom(Graphics g)
