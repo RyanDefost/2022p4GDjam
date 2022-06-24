@@ -78,8 +78,8 @@ namespace GameJam.Game
             g.Transform = new Matrix();
             g.ScaleTransform(context.scaleunit, context.scaleunit);
 
-            GoldAmountText = GoldAmount.ToString();
-            g.DrawString("Gold: " + GoldAmountText, Font, brush, 1,12);
+            goldAmountText = goldAmount.ToString();
+            g.DrawString("Gold: " + goldAmountText, Font, brush, 1,12);
             g.DrawString("Collect as much gold as posible in " + Timer.ToString() + " seconds", Font, brush, 1, 1);
         }
 
